@@ -14,18 +14,4 @@ def destroy
   redirect_back(fallback_location: root_path)
 end
     
-  # def create
-  #   book = book.find(params[:book_id])
-  #   favorite = current_user.favorites.new(book.id)
-  #   favorite.save
-  #   redirect_to book_path(book)
-  # end
-    
-  # def destroy
-  #   book = book.find(params[:book_id])
-  #   favorite = current_user.favorites.find_by(book.id)
-  #   favorite.destroy
-  #   redirect_to book_path(book)
-  # end
-
 end
