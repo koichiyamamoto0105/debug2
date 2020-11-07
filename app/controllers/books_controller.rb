@@ -6,14 +6,14 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book_new = Book.new
     @user = @book.user
-    # @book_comments = @book.comments
     @book_comment = BookComment.new
+    @books = Book.all
   end
 
   def index
     @books = Book.all
     @book = Book.new
-    # @book_comment 
+    # @book_comment = BookComment.new
   end
 
   def create
@@ -23,6 +23,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id), notice: "You have created book successfully."
     else
       @books = Book.all
+      # @book_comment = BookComment.new
       render 'index'
     end
   end

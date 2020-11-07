@@ -13,10 +13,11 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :following
   attachment :profile_image, destroy: false
   
-  def 
-	  favorited_by?(book)
-	  self.favorites.exists?(book_id: book.id)
-  end
+  # いいね機能パターン２
+  # def 
+	 #  favorited_by?(book)
+	 #  self.favorites.exists?(book_id: book.id)
+  # end
   
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
